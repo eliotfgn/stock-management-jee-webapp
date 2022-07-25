@@ -4,6 +4,16 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="default">
+        <class>com.example.jeeproject.models.User</class>
+        <class>com.example.jeeproject.models.Reservation</class>
+        <class>com.example.jeeproject.models.Item</class>
 
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/it_stock_management"/>
+            <property name="jakarta.persistence.jdbc.user" value="jeeuser"/>
+            <property name="jakarta.persistence.jdbc.password" value="jeepsw"/>
+        </properties>
     </persistence-unit>
 </persistence>
