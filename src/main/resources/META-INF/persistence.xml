@@ -14,6 +14,7 @@
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/it_stock_management"/>
             <property name="jakarta.persistence.jdbc.user" value="jeeuser"/>
             <property name="jakarta.persistence.jdbc.password" value="jeepsw"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>
