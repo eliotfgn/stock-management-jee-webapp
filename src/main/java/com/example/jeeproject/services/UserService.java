@@ -6,6 +6,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 
+import java.util.List;
+
 public class UserService {
     private final static EntityManager entityManager = DbUtil.getEntityManager("default");
 
@@ -55,5 +57,20 @@ public class UserService {
         } finally {
             entityManager.close();
         }
+    }
+
+    public static List<User> getAllUsers() {
+        String query = "SELECT u FROM User u";
+        TypedQuery<User> typedQuery = entityManager.createQuery(query, User.class);
+        List<User> users = null;
+
+        try {
+            users = typedQuery.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            entityManager.close();
+        }
+        return users;
     }
 }
